@@ -1,0 +1,38 @@
+<form id="login-form" action="/signup" method="post">
+	<div id="login-username">
+		<span>
+			<label>Username: </label>
+			<input type="text" name="username"/>
+		</span>
+	</div>
+	<div id="login-password">
+		<span>
+			<label>Password: </label>
+			<input type="password" name="password"/>
+		</span>
+	</div>
+	<div id="login-verify">
+		<span>
+			<label>Verify Password: </label>
+			<input type="password" name="verify"/>
+		</span>
+	</div>
+	<div id="login-username">
+		<span>
+			<label>Email(Optional): </label>
+			<input type="text" name="email"/>
+		</span>
+	</div>
+	<div>
+		<button type="submit">Register</button>
+	</div>
+</form>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}

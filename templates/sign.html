@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block title %} SignUp {% endblock %}
+{% block content %}
+<form method='post' action='/wiki/signup'>
+	<p><label>Username:</label>
+	<input name='username' class='inputbox' value='{{username}}'>
+	</p>
+	<p><label>Password:</label>
+	<input name='password' class='inputbox' value='{{password}}'>
+	</p>
+	<p><label>Verify Password:</label>
+	<input name='verify' class='inputbox' value='{{verify}}'>
+	</p>
+	<p><label>Email:</label>
+	<input name='email' class='inputbox' value='{{email}}'>
+	</p>
+	<div class='error'> {{error}} </div>
+	<input type='submit'>
+</form>
+{% endblock %}
