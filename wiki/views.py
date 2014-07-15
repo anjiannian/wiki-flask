@@ -26,13 +26,13 @@ def wiki(wiki_url):
         return render_template("/wiki/newpage.html",
                                wiki_url=wiki_url,
                                author=author)
-        if wiki_url == str(item.title):
-            return render_template('/wiki/wikipage.html',
-                                   flag=flag,
-                                   title=item.title,
-                                   content=item.content,
-                                   author=item.author,
-                                   created_at=item.created_at)
+    if wiki_url == str(item.title):
+        return render_template('/wiki/wikipage.html',
+                               flag=flag,
+                               title=item.title,
+                               content=item.content,
+                               author=item.author,
+                               created_at=item.created_at)
 
 
 @wiki_b.route("/")
