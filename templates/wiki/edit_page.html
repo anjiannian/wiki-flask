@@ -1,19 +1,25 @@
-
-<title>{{title}}</title>
+{% extends 'layout.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+<div class="header">
+  <div>
+    <span>
+      <a href="/history/{{title}}">history</a>
+      <label>{{author}}</label>
+      <a href="/logout">logout</a>
+      </span>
+    </div>
+  </div>
 <h1>{{title}}</h1>
 <div id="wikibody">{{content | safe}}</div>
 
-<form action="/wiki/{{wiki_url}}" method="post">
+<form action="/wiki/{{title}}" method="post">
 	<div id="epiceditor" style="height:90%;">
 		<textarea id="ae_editor" style="display:none;">{{content | safe}}</textarea>
 	</div>
 	<input type="textarea" name="content" style="display:none;"></input>
 	<button onclick="getContent()" type="submit">Done</button>
 </form>
-	<label>{{author}}</label>
-	<label>{{created_at}}</label>
-	<label>{{updated_at}}</label>
-	<button onclick="loadEditor()" style="display:{{flag}};">Edit</button>
 
 <script src="/static/plugins/epiceditor.min.js"></script>
 <script src="/static/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>
@@ -30,3 +36,4 @@ function getContent(){
 }
 
 </script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+<div class="header">
+  <div>
+    <form action="/wiki/{{title}}" method="post">
+      <span style="float:right;">
+        <button type="submit" style="display:{{flag}};">edit</button>
+        <a href="/history/{{title}}">history</a>
+        <label>{{author}}</label>
+        <a href="/logout">logout</a>
+        </span>
+      </form>
+    </div>
+  </div>
+<div>
+	<h1>{{title}}</h1>
+	<div id='a'>{{content | safe}}</div>
+	<label>{{created_at}}</label>
+</div>
+{% endblock %}

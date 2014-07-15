@@ -2,13 +2,13 @@
 <html>
 	<head>
 		{% block head %}
-		<link rel='stylesheet' href="{{ url_for(static',filename='style.css') }}">
+		<link rel='stylesheet' href="{{ url_for('static',filename='style.css') }}">
 		<title>{% block title %}{% endblock %} - Wiki</title>
 		{% endblock %}
 	</head>
 
 	<body>
-		<div id='content'>{% block content %}{% endblock %}</div>
+		<div id='body_content'>{% block content %}{% endblock %}</div>
 		<div id='footer'>
 			{% block footer %}
 			&copy; Copyright 2014 by <a href='http://anjn.info'>anjiannian</a>.
